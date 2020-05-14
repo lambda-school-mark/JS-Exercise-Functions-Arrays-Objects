@@ -15,6 +15,8 @@
 function addNumbers(num1, num2) {
   return num1 + num2;
 }
+console.log(addNumbers(30,75))
+
 
 // ⭐️ Example Challenge end ⭐️
 
@@ -36,9 +38,11 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(/* code here */) {
-  /* code here */
+
+function sayGoodbye(name) {
+  return 'Goodbye, ' + name + '. Have a great day.';
 }
+console.log(sayGoodbye('Andy'));
 
 /**
  * ### Challenge `temperatureCtoF`
@@ -54,9 +58,11 @@ function sayGoodbye(/* code here */) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
-  /* code here */
+function temperatureCtoF(celsius) {
+  const fahrenheit = Math.round(celsius * 9 / 5 + 32)
+  return fahrenheit
 }
+console.log(temperatureCtoF(24))
 
 /**
  * ### Challenge `temperatureInF`
@@ -75,10 +81,17 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
-}
-
+function temperatureInF(temperature, unit) {
+  if (unit === 'C'){
+    //then the formula is 
+    const fahrenheit = Math.round(temperature * 9 / 5 + 32)
+    return fahrenheit + "F"
+  }
+  else if (unit === 'F'){
+    return temperature + 'F'
+  }
+  }
+console.log(temperatureInF(24, 'C'))
 
 /**
  * ### Challenge `makePersonObject`
@@ -96,10 +109,21 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
-}
 
+const ids = [
+  {id: 1, name: "Bob", email: "bob@gmail.com"}
+  {id: 2, name: "John", email: "john@gmail.com"}
+  {id: 3, name: "Kat", email: "kat@gmail.com"}
+  {id: 4, name: "Jess", email: "jess@gmail.com"}
+  {id: 5, name: "Leia", email: "leia@gmail.com"}
+
+]
+function makePersonObject(name, email) {
+    for(let i = 0; i < ids.length; i++){
+      if(ids[i].name === name && ids[i].email === email)
+      
+    }
+}
 /**
  * ### Challenge `getName`
  * 
